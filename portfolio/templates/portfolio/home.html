@@ -1,0 +1,17 @@
+{% extends "portfolio/base.html" %}
+        {% block content %}
+            {% load static %}
+            <a href="{% static 'portfolio/2A.pdf'%}">Link to pDF</a>
+            {% for project in projects %}
+
+            <h1>{{ project.title }}</h1>
+            <h2>{{ project.description }}</h2>
+            <img src="{{ project.image.url }}" height="200" width="200">
+            {% if project.url %}
+                <a href="{{ project.url }}">Link</a>
+            {% endif %}
+
+            {% endfor %}
+             {% load static %}
+            <img src="{% static 'portfolio/101021131_1209556939391925_6034152304662282240_n.jpg' %}" alt="">
+        {% endblock %}
